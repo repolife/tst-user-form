@@ -1,6 +1,6 @@
 import React from "react";
 
-interface TextInputProps extends React.InputHTMLAttributes<Required<Pick<HTMLInputElement, 'value' | 'type' | 'onchange' | 'required'>>>  {
+interface TextInputProps extends Required<Pick<React.InputHTMLAttributes<HTMLInputElement>, 'type' | 'value' | 'onChange' | 'required'>>  {
   label?: string;
 }
 
