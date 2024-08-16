@@ -4,4 +4,9 @@
 
 `docker compose up -d --build`
 
-##### App will run on localhost:3000
+##### App will run on [localhost:5173](http://localhost:5173)
+
+### To run without docker run the following commands:
+ `npm ci`
+
+ `npm run dev`
