@@ -36,37 +36,35 @@ const UserForm = () => {
     setPassword("");
     setConfirmPassword("");
     setError("");
-    
+
     // User added
     alert('User account created succesfully!')
   };
 
   return (
-    <form style={{ display: 'flex', flexDirection: 'column', justifyContent: 'column',  gap: "1em" }} onSubmit={handleSubmit}>
+    <form style={{ display: 'flex', flexDirection: 'column', justifyContent: 'column', gap: "1em" }} onSubmit={handleSubmit}>
       <h2>TST User From</h2>
-      <TextInput label="User Name" type="text" value={username} onChange={(e) => setUsername(e.target.value)} required />
+      <TextInput label="Name" type="text" value={username} onChange={(e) => setUsername(e.target.value)} required />
       <TextInput
-        label="Email"
         type="email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         required
       />
       <TextInput
-        label="Password"
         type="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         required
       />
       {
-       password.length > 0 && <TextInput
-        label="Confirm Password"
-        type="password"
-        value={confirmPassword}
-        onChange={(e) => setConfirmPassword(e.target.value)}
-        required
-      />
+        password.length > 0 && <TextInput
+          label="Confirm Password"
+          type="password"
+          value={confirmPassword}
+          onChange={(e) => setConfirmPassword(e.target.value)}
+          required
+        />
 
       }      {error && <p style={{ color: "red" }}>{error}</p>}
       <button type="submit">Create Account</button>
