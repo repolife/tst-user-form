@@ -38,13 +38,19 @@ const UserForm = () => {
     setError("");
 
     // User added
-    alert('User account created succesfully!')
+    alert("User account created succesfully!");
   };
 
   return (
-    <form style={{ display: 'flex', flexDirection: 'column', justifyContent: 'column', gap: "1em" }} onSubmit={handleSubmit}>
-      <h2>TST User From</h2>
-      <TextInput label="Name" type="text" value={username} onChange={(e) => setUsername(e.target.value)} required />
+    <form onSubmit={handleSubmit}>
+      <h1>TST User From</h1>
+      <TextInput
+        label="Name"
+        type="text"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+        required
+      />
       <TextInput
         type="email"
         value={email}
@@ -57,19 +63,19 @@ const UserForm = () => {
         onChange={(e) => setPassword(e.target.value)}
         required
       />
-      {
-        password.length > 0 && <TextInput
+      {password.length > 0 && (
+        <TextInput
           label="Confirm Password"
           type="password"
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
           required
         />
-
-      }      {error && <p style={{ color: "red" }}>{error}</p>}
+      )}{" "}
+      {error && <p style={{ color: "red" }}>{error}</p>}
       <button type="submit">Create Account</button>
     </form>
   );
-}
+};
 
 export default UserForm;

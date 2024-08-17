@@ -1,25 +1,39 @@
 import React from "react";
 
-interface TextInputProps extends Required<Pick<React.InputHTMLAttributes<HTMLInputElement>, 'type' | 'value' | 'onChange' | 'required'>>  {
+interface TextInputProps
+  extends Required<
+    Pick<
+      React.InputHTMLAttributes<HTMLInputElement>,
+      "type" | "value" | "onChange" | "required"
+    >
+  > {
   label?: string;
 }
 
-export const TextInput: React.FC<TextInputProps> = ({ type, value, onChange, required, label }) => {
+export const TextInput: React.FC<TextInputProps> = ({
+  type,
+  value,
+  onChange,
+  required,
+  label,
+}) => {
+  const defaultLabel = label
+    ? label
+    : `${type?.charAt(0).toLocaleUpperCase()}${type?.substring(1)}`;
 
-  const defaultLabel = label ? label : `${type?.charAt(0).toLocaleUpperCase()}${type?.substring(1)}`
+  return (
+    <label>
+      <input
+        type={type}
+        placeholder={defaultLabel}
+        value={value}
+        onChange={onChange}
+        required={required}
+      />
 
-  return (<div style={{display: 'flex', gap: '1em'}}>
-    <label style={{flex: 1}}>{defaultLabel}: </label>
-    <input style={{flex: 1}}
-      type={type}
-      value={value}
-      onChange={onChange}
-      required={required}
+      <span>{defaultLabel}: </span>
+    </label>
+  );
+};
 
-    />
-  </div>)
-
-
-}
-
-export default TextInput
+export default TextInput;

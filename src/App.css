@@ -1,42 +1,118 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+body {
+  background: #35dc9b;
+  background: linear-gradient(to bottom, #35dc9b, #3857af);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 0;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+form h1 {
+  margin: 0 auto 40px;
+  color: #fff;
+  font: 20px Helvetica;
+  text-transform: uppercase;
+  letter-spacing: 3px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+form label {
+  position: relative;
+  display: block;
 }
-
-.card {
-  padding: 2em;
+form label input {
+  font:
+    18px Helvetica,
+    Arial,
+    sans-serif;
+  box-sizing: border-box;
+  display: block;
+  border: none;
+  padding: 20px;
+  width: 300px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  outline: none;
+  background: white;
+  transition: all 0.2s ease-in-out;
 }
-
-.read-the-docs {
-  color: #888;
+form label input::-moz-placeholder {
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  color: #999;
+  font:
+    18px Helvetica,
+    Arial,
+    sans-serif;
+}
+form label input:-ms-input-placeholder {
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  color: #999;
+  font:
+    18px Helvetica,
+    Arial,
+    sans-serif;
+}
+form label input::placeholder {
+  transition: all 0.2s ease-in-out;
+  color: #999;
+  font:
+    18px Helvetica,
+    Arial,
+    sans-serif;
+}
+form label input:focus,
+form label input.populated {
+  padding-top: 28px;
+  padding-bottom: 12px;
+}
+form label input:focus::-moz-placeholder,
+form label input.populated::-moz-placeholder {
+  color: transparent;
+}
+form label input:focus:-ms-input-placeholder,
+form label input.populated:-ms-input-placeholder {
+  color: transparent;
+}
+form label input:focus::placeholder,
+form label input.populated::placeholder {
+  color: transparent;
+}
+form label input:focus + span,
+form label input.populated + span {
+  opacity: 1;
+  top: 10px;
+}
+form label span {
+  color: #35dc9b;
+  font:
+    13px Helvetica,
+    Arial,
+    sans-serif;
+  position: absolute;
+  top: 0px;
+  left: 20px;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+form button[type="submit"] {
+  transition: all 0.2s ease-in-out;
+  font:
+    18px Helvetica,
+    Arial,
+    sans-serif;
+  border: none;
+  background: #1aaf75;
+  color: #fff;
+  padding: 16px 40px;
+}
+form button[type="submit"]:hover {
+  background: #109f67;
 }
