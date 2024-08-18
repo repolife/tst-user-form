@@ -1,9 +1,14 @@
+/// <reference types="cypress" />
 import UserForm from './UserForm'
 
-describe('<UserForm />', () => {
+import { mount } from 'cypress/react'
+
+describe('UserForm Component', () => {
+  beforeEach(() => {
+    mount(<UserForm />);
+  });
+
   it('should show an error if passwords do not match', () => {
-    // see: https://on.cypress.io/mounting-react
-    cy.mount(<UserForm />)
     cy.get('input[name="name"]').type('Tom')
     cy.get('input[name="password"]').type('123')
     cy.get('input[name="email"]').type('tom@emal.com')
