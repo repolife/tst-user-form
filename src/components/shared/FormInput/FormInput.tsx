@@ -31,7 +31,7 @@ export const TextInput: React.FC<TextInputProps> = ({
         required={required}
       />
 
-      <span>{defaultLabel}: </span>
+      <span>{defaultLabel} </span>
     </label>
   );
 };
