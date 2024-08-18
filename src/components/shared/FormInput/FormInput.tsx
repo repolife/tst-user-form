@@ -4,7 +4,7 @@ interface TextInputProps
   extends Required<
     Pick<
       React.InputHTMLAttributes<HTMLInputElement>,
-      "type" | "value" | "onChange" | "required"
+      "type" | "value" | "onChange" | "required" 
     >
   > {
   label?: string;
@@ -27,6 +27,7 @@ export const TextInput: React.FC<TextInputProps> = ({
         type={type}
         placeholder={defaultLabel}
         value={value}
+        name={defaultLabel.toLocaleLowerCase().replace(' ', '-')}
         onChange={onChange}
         required={required}
       />
